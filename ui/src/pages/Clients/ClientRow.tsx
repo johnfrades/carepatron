@@ -1,4 +1,4 @@
-import { TableCell, TableRow } from '@mui/material';
+import { TableCell, TableRow, Typography } from '@mui/material';
 
 export interface Props {
 	client: Client;
@@ -19,7 +19,9 @@ export default function ClientListItem({ client }: Props) {
 			}}
 		>
 			<TableCell component='th' scope='row'>
-				{firstName} {lastName}
+				<Typography color='rgb(59, 98, 246)' variant='body2' fontWeight='500'>
+					{firstName} {lastName}
+				</Typography>
 			</TableCell>
 			<TableCell>{phoneNumber}</TableCell>
 			<TableCell>{email}</TableCell>

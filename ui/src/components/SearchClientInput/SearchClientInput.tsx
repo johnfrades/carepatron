@@ -11,8 +11,8 @@ const SearchClientInput = () => {
 		<OutlinedInput
 			onChange={(e) => dispatch({ type: 'SEARCH_INPUT', data: e.target.value })}
 			size='small'
-			sx={{ backgroundColor: 'white', borderColor: 'red' }}
-			type='text'
+			sx={{ backgroundColor: 'white', borderRadius: '8px' }}
+			type='search'
 			placeholder='Search clients...'
 			endAdornment={
 				<InputAdornment position='end'>

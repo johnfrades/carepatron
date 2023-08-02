@@ -36,7 +36,7 @@ const BasicTable = () => {
 				<TableHead>
 					<TableRow>
 						<TableCell>Name</TableCell>
-						<TableCell>Phone number</TableCell>
+						<TableCell>Phone</TableCell>
 						<TableCell>Email</TableCell>
 					</TableRow>
 				</TableHead>
