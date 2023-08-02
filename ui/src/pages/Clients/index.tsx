@@ -21,7 +21,12 @@ function Clients() {
 			<Typography variant='h5' fontWeight={500} sx={{ textAlign: 'start' }}>
 				Clients
 			</Typography>
-			<Stack direction='row' justifyContent='space-between' sx={{ marginTop: '20px' }}>
+			<Stack
+				direction={{ xs: 'column', sm: 'row' }}
+				gap={{ xs: 3 }}
+				justifyContent='space-between'
+				sx={{ marginTop: '20px' }}
+			>
 				<SearchClientInput />
 				<Button
 					disableElevation
