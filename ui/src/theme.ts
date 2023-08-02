@@ -10,6 +10,15 @@ const theme = createTheme({
 		},
 	},
 	components: {
+		MuiStepIcon: {
+			styleOverrides: {
+				root: {
+					'&.Mui-completed': {
+						color: 'green',
+					},
+				},
+			},
+		},
 		MuiInputLabel: {
 			styleOverrides: {
 				root: {

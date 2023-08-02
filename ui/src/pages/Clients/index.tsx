@@ -1,17 +1,15 @@
 import React, { memo, useContext, useEffect, useState } from 'react';
-import { Paper, Stack, Typography, OutlinedInput, InputAdornment } from '@mui/material';
+import { Paper, Stack, Typography } from '@mui/material';
 import { StateContext } from '../../store/DataProvider';
 import Page from '../../components/Page';
 import ClientTable from './ClientTable';
 import { getClients } from '../../services/api';
 import Button from '@mui/material/Button';
-import IconButton from '@mui/material/IconButton';
-import SearchIcon from '@mui/icons-material/Search';
 import CreateNewClientModal from '../../components/CreateNewClientModal';
+import SearchClientInput from '../../components/SearchClientInput';
 
 function Clients() {
-	const { state, dispatch } = useContext(StateContext);
-	const { clients } = state;
+	const { dispatch } = useContext(StateContext);
 	const [modalOpen, setModalOpen] = useState(false);
 
 	useEffect(() => {
@@ -24,19 +22,7 @@ function Clients() {
 				Clients
 			</Typography>
 			<Stack direction='row' justifyContent='space-between' sx={{ marginTop: '20px' }}>
-				<OutlinedInput
-					size='small'
-					sx={{ backgroundColor: 'white', borderColor: 'red' }}
-					type='text'
-					placeholder='Search clients...'
-					endAdornment={
-						<InputAdornment position='end'>
-							<IconButton aria-label='search' edge='end'>
-								<SearchIcon />
-							</IconButton>
-						</InputAdornment>
-					}
-				/>
+				<SearchClientInput />
 				<Button
 					disableElevation
 					color='primary'
@@ -48,7 +34,7 @@ function Clients() {
 				</Button>
 			</Stack>
 			<Paper sx={{ margin: 'auto', marginTop: 3 }}>
-				<ClientTable clients={clients} />
+				<ClientTable />
 			</Paper>
 
 			<CreateNewClientModal isOpen={modalOpen} onClose={() => setModalOpen(false)} />
