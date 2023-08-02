@@ -1,46 +1,46 @@
-# Getting Started with Create React App
+# Answering questions on the Wiki:
+### If time wasn't a constraint what else would you have done?
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- To understand more about the React MUI library
 
-## Available Scripts
+### How was this test overall? I.e too hard, too easy, how long it took, etc
+- For me its easy, it took me half a day to implement the Requirements needed for the test
+- The only challenge for me is the usage of the React MUI library, as i need to understand how theming works here, how the 
+styles and components are implemented
 
-In the project directory, you can run:
+### How close to the designs is your submission?
+- Probably i would say 85-90%
 
-### `npm start`
+### If you needed to change something in the future (size/color of buttons), how easy would it be?
+- It would be pretty easy, as we just need to adjust it in our `theme` object
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### How does this look on different devices?
+- Added responsiveness on this to display properly on small resolutions
+- Added the `<CSSBaseline>` which is to normalize the styles across other browsers
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### What if a customer has thousands of records?
+- Then we need to update the backend API to support pagination and implement the pagination
 
-### `npm test`
+### How is state managed as the codebase grows?
+- Currently we use context for this, which is alright based on the requirements and size of the app,
+but we need to use a global state management here like `redux` or `zustand` in the future if the codebase
+grows and there's alot of data accessing between siblings.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### How can we support multiple countries?
+- We use `react-intl` library to handle different languages on our text
 
-### `npm run build`
+### How can you ensure the app behaves as you intend it to?
+- We add unit test and component test
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### How intuitive is the behavior of the app?
+- I've added some UX on this:
+  - on creating new client, we show a snackbar telling users that its a success operation
+  - if the required field is not inputted, we display a proper error message on the UI
+  - in searching, we see the results in real-time. Though if the API is properly implemented,
+  then we move the searching logic to the backend and add a loading state while searching
+  - if there's an error in the API when we create a client, we catch the error
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Added Libraries
+- Added `uuid` library to generate the ID of the client to be sent to the API
+- Added `react-hook-form` to handle the input form validation
+- Added `prettier` for code formatter
