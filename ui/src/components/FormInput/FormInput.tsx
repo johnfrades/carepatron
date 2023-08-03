@@ -19,7 +19,7 @@ const labelMapping: Record<FormInputProps['keyProp'], string> = {
 const FormInput: React.FC<FormInputProps> = ({ keyProp, errors, register }) => {
 	return (
 		<>
-			<InputLabel error={!!errors[keyProp]} shrink={false} htmlFor='firstName'>
+			<InputLabel error={!!errors[keyProp]} shrink={false} htmlFor={keyProp}>
 				{labelMapping[keyProp]}
 			</InputLabel>
 			<TextField
